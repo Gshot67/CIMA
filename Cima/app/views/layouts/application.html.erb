@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <%# flash messages %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%# page content %>
     <%= yield %>
   </body>
 </html>
