@@ -1,0 +1,33 @@
+Database CIMA
+User_login(User_id,mail,pswd*)
+Dipendemente da OAuth conserviamo la password o null
+Se mail è già presente nel databse non è possibile iscriversi 
+User(User_id,nome*,cognome*,foto*,bio*,certificazione*,giornalista)
+	User_id ha vincolo di foreign key in User_login
+Foto contiene un link referenziale alla foto che si vuole avere nel profilo
+Certificazione assume il valore:
+	null se utente non è ne certificato ne utente
+	ENTE se è un ente
+	<nome ente certificante> se è un utente certificato
+Giornalista può assumere un valore tra null e 1
+
+Giornalisti_preferiti(seguace,giornalista)
+	Seguace ha foreign key in user
+	Giornalista ha foreign key in user e gioenalista is not null
+	Seguace !=Giornalista
+Pubblicati(Giornalista,articoloPubblicato,inEvidenza*)
+	Giornalista ha foreign key in user e giornalista is not null
+	articoliPubblicati sha foreign key in post e indica un Articolo scritto da Giornalista
+inEvidenza se not null indica che l’articolo deve apparire in cima tra gli articoli pubblicati da Giornalista
+Post(ID,data,autore,tag*,topic,titolo,fonteEsterna*,lingua*,editoriale*)
+	ID unico tra tutti i post e generato alla creazione del post
+	Autore ha foreign key in User e certificazione o giornalista devono essere not null
+Tag include I tag del post, i tag sono separati tra di loro con “-“
+fonteEsterna è presente sono nelle News e indica la fonte della notizia
+editoriale è l’attributo che caratterizza gli editoriali e indica la news (ID del post) che viene commentata nell’articolo
+Commento(ID_commento,ID_post,ID_utente,like)
+ID_commento è generato  alla creazione del commento a partire dagli id di autore e post
+ID_post ha foreign key in post e indica il post sotto al quale è postato il commento
+ID_autore indica l’autore del commento
+VINCOLI:
+•	In Pubblicati, ogni Giornalista può avere al massimo 1 articolo in evidenza 
