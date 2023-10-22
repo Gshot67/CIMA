@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  tag: MyText
+  topic: MyString
+  content: MyText
+  titolo: MyString
+  fonte_esterna: MyString
+  lingua: MyString
+  editoriale: MyString
+
+two:
+  user: two
+  tag: MyText
+  topic: MyString
+  content: MyText
+  titolo: MyString
+  fonte_esterna: MyString
+  lingua: MyString
+  editoriale: MyString

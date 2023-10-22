@@ -1,0 +1,43 @@
+.icon-span {
+  display: inline-block; /* Per rendere lo span un elemento inline-block */
+  width: 20px; /* Larghezza desiderata per lo span */
+  height: 20px; /* Altezza desiderata per lo span */
+  text-align: center; /* Allinea l'immagine al centro orizzontalmente */
+  line-height: 20px; /* Allinea l'immagine al centro verticalmente */
+}
+
+.icon-span img {
+  max-width: 100%; /* Assicurati che l'immagine non superi la larghezza del contenitore */
+  max-height: 100%; /* Assicurati che l'immagine non superi l'altezza del contenitore */
+}
+
+.search-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-item.sign-in a,
+.nav-item.sign-up a {
+    background-color: #007BFF; /* Colore di sfondo per i link */
+    color: #fff; /* Colore del testo */
+    padding: 10px 50px; /* Spaziatura interna (padding) per i link */
+    border-radius: 5px; /* Bordo arrotondato */
+    margin-left: 10px; /* Spaziatura a sinistra tra i link "Sign In" e "Sign Up" */
+    text-decoration: none; /* Rimuovi la sottolineatura del testo dei link */
+    font-weight: bold; /* Testo in grassetto */
+    transition: background-color 0.3s; /* Transizione del colore di sfondo al passaggio del mouse */
+}
+
+.nav-item.sign-in a:hover,
+.nav-item.sign-up a:hover {
+    background-color: #0056b3; /* Cambia il colore di sfondo al passaggio del mouse */
+}
+
+.space-divider {
+  width: 30px; /* Larghezza del div separatore */
+}
+
