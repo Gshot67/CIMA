@@ -1,4 +1,18 @@
+<%= stylesheet_link_tag("feed") %>
+
+
 <div class="container">
+    <div class="row">
+        <div class="col-sm border border-2 rounded border-dark" id="topic">
+            <h3 align="center">General</h3>
+        </div>
+        <div class="col-sm border border-2 rounded border-dark" id="topic">
+            <h3 align="center">Sport</h3>
+        </div>
+        <div class="col-sm border border-2 rounded border-dark" id="topic">
+            <h3 align="center">Entertainment</h3>
+        </div>
+    </div>
     <div class="row">
         <ul class="list-group">
             <% @posts.each do |post|%>

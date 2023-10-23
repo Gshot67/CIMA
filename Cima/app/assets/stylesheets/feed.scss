@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    font-family: 'Playfair Display', serif;
+}
+h5{
+    font-weight: bold;
+}
+body{
+    background-color: bisque;
+}
+.col-sm{
+    background-color: rgb(250, 215, 173);
+
+}
+.list-group-item{
+    background-color: rgb(250, 215, 173);
+    border-color: black;
+    border-width: 3px;
+}
