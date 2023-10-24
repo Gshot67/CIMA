@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'users/signup', to: 'devise/registrations#new'
     get 'users/:id', to: 'users#show', as: 'user'
   get'feed', to:'feed#show'
+ 
   
   end
 
