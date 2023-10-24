@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     get "users/sign_out", to: 'devise/sessions#destroy'
     get 'users/signup', to: 'devise/registrations#new'
     get 'users/:id', to: 'users#show', as: 'user'
+  get'feed', to:'feed#show'
+ 
+  
   end
 
   root 'pages#home'
