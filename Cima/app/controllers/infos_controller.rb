@@ -8,6 +8,7 @@ class InfosController < ApplicationController
 
   # GET /infos/1 or /infos/1.json
   def show
+    ruolorender
   end
 
   # GET /infos/new
@@ -60,11 +61,25 @@ class InfosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_info
-      @info = Info.find(params[:id])
+      id = params[:user_id]
+      @info = Info.where(user_id: id).first
     end
 
     # Only allow a list of trusted parameters through.
     def info_params
       params.require(:info).permit(:user_id, :username, :nome, :foto, :bio, :certificazione, :tipo)
+    end  
+    
+    def ruolorender
+      if @info.tipo == 0
+       @ruolo = "Community Member"
+  
+      elsif @info.tipo == 1
+        @ruolo = "Journalist"
+        
+      else
+        @ruolo = "Certified Association"
+      end
+  
     end
 end

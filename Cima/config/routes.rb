@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'add_infos' => 'infos#new'
   get 'info_user' => 'infos#show'
   get 'home' => 'pages#home'
+  get 'infos/ruolorender'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
