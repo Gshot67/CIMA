@@ -13,6 +13,7 @@ class InfosController < ApplicationController
   # GET /infos/new
   def new
     @info = Info.new
+    @info.user_id = current_user.id
   end
 
   # GET /infos/1/edit
@@ -22,10 +23,9 @@ class InfosController < ApplicationController
   # POST /infos or /infos.json
   def create
     @info = Info.new(info_params)
-
     respond_to do |format|
       if @info.save
-        format.html { redirect_to info_url(@info), notice: "Info was successfully created." }
+        format.html { redirect_to home_path, notice: "Info was successfully created." }
         format.json { render :show, status: :created, location: @info }
       else
         format.html { render :new, status: :unprocessable_entity }

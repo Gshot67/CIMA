@@ -41,3 +41,17 @@
   width: 30px; /* Larghezza del div separatore */
 }
 
+#myoccult {
+  display: none;
+}
+
+.image-container {
+  width: 40px; /* Imposta la larghezza del div */
+  height: 40px; /* Imposta l'altezza del div */
+  overflow: hidden; /* Nasconde parte dell'immagine che eccede le dimensioni del div */
+}
+
+.image-container img {
+  max-width: 100%; /* Imposta la larghezza massima dell'immagine al 100% del div */
+  max-height: 100%; /* Imposta l'altezza massima dell'immagine al 100% del div */
+}

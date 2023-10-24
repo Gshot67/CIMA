@@ -39,12 +39,12 @@
           <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
             <div class="d-flex">
               <!-- Signin -->
-              <a href="#" class="nav-link">Sign In</a>
+              <span class="nav-link"> <%=link_to "Sign in", new_user_session_path, class: "nav-link" %> </span>
 
               <div class="space-divider"></div>
 
               <!-- Signup -->
-              <a href="#" class="nav-link">Sign Up</a>
+              <span class="nav-link"> <%=link_to "Sign up", new_user_registration_path, class: "nav-link" %> </span>
 
               <div class="space-divider"></div>
               
@@ -53,15 +53,27 @@
             </div>
           </div>
           <% else %>
+          
           <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
             <div class="d-flex">
-              <!-- Signup -->
-              <a href="#" class="nav-link">Log out</a>
+              <!-- Logout -->
+              <span class="nav-link"> <%=link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %> </span>
 
               <div class="space-divider"></div>
               
               <!-- User -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Symbol_OK.svg/768px-Symbol_OK.svg.png" class="rounded-circle" height="22" alt="" loading="lazy" />
+              <% if !Info.exists?(user_id: current_user.id)%>
+                
+                <%=link_to "Add info", add_infos_path, class: "nav-link" %> </span>
+                
+                <div class="space-divider"></div>
+
+                <img src="https://friconix.com/png/fi-cnluxx-anonymous-user-circle.png" class="rounded-circle" height="22" alt="" loading="lazy" />
+              <%else%>
+              <div class="image-container">
+                <%= link_to(image_tag(Info.where(user_id: current_user.id).first.foto), info_user_path) %>
+              </div>
+              <%end%>
             </div>
           </div>
           <% end%>
