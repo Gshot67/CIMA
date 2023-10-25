@@ -1,0 +1,27 @@
+body{
+    background-color: bisque;
+}
+
+*{
+    font-family: 'Playfair Display', serif;
+}
+#post_card{
+    background-color: rgb(250, 215, 173);
+    border-radius: 5%;
+    border-color: black;
+    border-width: thick;
+}
+
+#title{
+    text-align: center;
+}
+
+#content{
+    font-size: x-large;
+    font-weight: normal;
+}
+
+#Author{
+    font-size: x-large;
+    text-align: right;
+}

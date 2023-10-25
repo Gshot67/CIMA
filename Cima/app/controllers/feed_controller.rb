@@ -5,7 +5,20 @@ class FeedController < ApplicationController
       @posts = @search.result(distinct: true)
     end
     def show
-      @posts = Post.all
+
     end
+    def general
+      @posts = Post.where(topic: 'general')
+      render 'show'
+    end
+    def sport
+      @posts = Post.where(topic: 'sport')
+      render 'show'
+    end
+    def pop
+      @posts = Post.where(topic: 'pop')
+      render 'show'
+    end
+
   end
   

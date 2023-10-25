@@ -6,21 +6,19 @@
         <!--
         <div class="col-sm border border-2 rounded border-dark" id="topic">
             <h3 align="center">General</h3>
+        </div> -->
+        <div class="col-sm border border-2 rounded border-dark" id="topic">
+            <%= link_to content_tag(:h3, 'General'), feed_general_path, style: 'color: black; text-decoration:none;' %>
         </div>
-        -->
-        <%= button_to "General", { action: "show" }, class: "col"  %>
-        <%= button_to "Filtra per topic general", feed_path(topic: "general"), method: :get %>
 
-        <!--
+        
         <div class="col-sm border border-2 rounded border-dark" id="topic">
-            <h3 align="center">Sport</h3>
+            <%= link_to content_tag(:h3, 'Sport'), feed_sport_path, style: 'color: black; text-decoration:none;' %>
         </div>
         <div class="col-sm border border-2 rounded border-dark" id="topic">
-            <h3 align="center">Entertainment</h3>
+            <%= link_to content_tag(:h3, 'Entertainment'), feed_pop_path, style: 'color: black; text-decoration:none;' %>
         </div>
-        -->
-        <%= button_to "Sports", { action: "show" }, class: "col"  %>
-        <%= button_to "Entertainment", { action: "show" }, class: "col"  %>
+        
 
     </div>
     <%= @posts = Post.all %>

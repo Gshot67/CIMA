@@ -8,6 +8,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @user = @post.user_id
+    @info = Info.find_by(user_id: @user)
+    @username = @info.username 
   end
 
   # GET /posts/new
