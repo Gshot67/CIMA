@@ -9,6 +9,7 @@ class InfosController < ApplicationController
   # GET /infos/1 or /infos/1.json
   def show
     ruolorender
+    @posts = Post.all
   end
 
   # GET /infos/new

@@ -27,6 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_130618) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.string "follower"
+    t.string "seguito"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "infos", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "username", null: false
