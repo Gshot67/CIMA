@@ -23,5 +23,6 @@
         <%= button_to "Entertainment", { action: "show" }, class: "col"  %>
 
     </div>
+    <%= @posts = Post.all %>
     <%= render partial: 'shared/feed', locals: { posts: @posts} %>
 </div>

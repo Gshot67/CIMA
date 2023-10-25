@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :follows
   resources :infos
   resources :comments
   resources :posts
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'info_user' => 'infos#show'
   get 'home' => 'pages#home'
   get 'infos/ruolorender'
+  get 'follow/destroy' => 'follows#destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
