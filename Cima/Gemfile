@@ -35,6 +35,16 @@ gem 'ransack'
 
 gem "sassc-rails"
 
+source "https://rubygems.org"
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0.0'
+end
+group :test do
+  gem 'cucumber', '~> 9.0.2'
+  gem 'rspec', '~> 3.12.0'
+end
+
 gem 'dotenv-rails', groups: [:development, :test]
 
  #Oauth
