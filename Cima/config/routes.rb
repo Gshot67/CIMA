@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :follows
   resources :infos
   resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:new, :create]
+  end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   as :user do
     get "users/signin", to: 'dev/sessions#new'
