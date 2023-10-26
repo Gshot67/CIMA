@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @user = @post.user_id
     @info = Info.find_by(user_id: @user)
     @username = @info.username 
+    @comments = Comment.where(post_id: @post)
   end
 
   # GET /posts/new

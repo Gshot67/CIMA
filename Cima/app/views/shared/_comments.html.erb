@@ -1,0 +1,12 @@
+<head>
+    <%= stylesheet_link_tag("feed") %>
+</head>
+<div class="row">
+        <ul class="list-group">
+            <% @comments.each do |comment|%>
+                <div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <p class="mb-1"><%= comment.content %></p>            
+                </div>
+            <%end%>
+        </ul>
+</div>
