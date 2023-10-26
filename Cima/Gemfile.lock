@@ -131,6 +131,7 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    excon (0.104.0)
     execjs (2.9.1)
     faraday (2.7.11)
       base64
@@ -343,6 +344,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  excon
   importmap-rails
   jbuilder
   omniauth-facebook
