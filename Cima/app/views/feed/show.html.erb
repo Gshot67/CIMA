@@ -21,6 +21,9 @@
         
 
     </div>
+    <div class='row '>
+        <%= button_to "Nuove notizie", url: :back, method: :get %>
+    </div>
     <%= @posts = Post.all %>
     <%= render partial: 'shared/feed', locals: { posts: @posts} %>
 </div>
