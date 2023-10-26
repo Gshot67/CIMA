@@ -11,7 +11,7 @@
 
       <p id="Author">
         <strong>Autore :</strong>
-        <%= @username %>
+        <%= link_to @username, info_user_path(user_id: @user) %>
       </p>
 
       <p id="content">
