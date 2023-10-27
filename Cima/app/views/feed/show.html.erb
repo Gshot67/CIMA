@@ -23,7 +23,9 @@
     </div>
     <div class='row '>
         <%= button_to "Nuove notizie", url: :back, method: :get %>
+        <% @languages.each do |language| %>
+            <%= link_to language, url_for(lingua: language), class: 'dropdown-item' %>
+        <% end %>
     </div>
-    <%= @posts = Post.all %>
     <%= render partial: 'shared/feed', locals: { posts: @posts} %>
 </div>
