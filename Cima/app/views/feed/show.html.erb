@@ -22,7 +22,7 @@
 
     </div>
     <div class='row '>
-        <%= button_to "Nuove notizie", url: :back, method: :get %>
+        <span class="nav-link"> <%=link_to "Nuove Notizie", feed_othernews_path(feedtopic: @feedtopic), class: "nav-link" %> </span>
     </div>
     <%= @posts = Post.all %>
     <%= render partial: 'shared/feed', locals: { posts: @posts} %>

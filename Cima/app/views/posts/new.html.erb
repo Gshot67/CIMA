@@ -1,9 +1,22 @@
 <h1>New post</h1>
-
+<%if @type_request == 1%>
+<%= render "formA", post: @post %>
+<%else%>
 <%= render "form", post: @post %>
+<%end%>
 
 <br>
 
 <div>
   <%= link_to "Back to posts", posts_path %>
 </div>
+
+<%if @type_request == 1%>
+<script>
+  // Seleziona il modulo utilizzando l'ID
+  var form = document.getElementById("Autoform");
+
+
+  form.submit();
+</script>
+<%end%>

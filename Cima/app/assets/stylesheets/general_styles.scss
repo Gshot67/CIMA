@@ -41,6 +41,10 @@
   width: 30px; /* Larghezza del div separatore */
 }
 
+.space-divider2 {
+  width: 400px; /* Larghezza del div separatore */
+}
+
 #myoccult {
   display: none;
 }
@@ -199,4 +203,16 @@ mark {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.contenitorehome {
+  display: flex;
+  justify-content: center; /* Allineamento orizzontale al centro */
+  align-items: center;    /* Allineamento verticale al centro */
+  height: 300px;          /* Imposta l'altezza del contenitore (adattala alle tue esigenze) */
+}
+
+.immaginehome {
+  max-width: 100%; /* Assicurati che l'immagine non superi la larghezza del contenitore */
+  max-height: 100%; /* Assicurati che l'immagine non superi l'altezza del contenitore */
 }

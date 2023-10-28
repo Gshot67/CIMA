@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   get 'feed/general', to: 'feed#general'
   get 'feed/sport', to: 'feed#sport'
   get 'feed/pop', to: 'feed#pop'
+  get 'feed/othernews', to: 'feed#othernews'
   
   end
 
   root 'pages#home'
-  
+
   get 'add_infos' => 'infos#new'
   get 'info_user' => 'infos#show'
   get 'home' => 'pages#home'

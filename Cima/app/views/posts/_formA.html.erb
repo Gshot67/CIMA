@@ -1,0 +1,57 @@
+<%= form_with(model: post, id: "Autoform") do |form| %>  
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id, value: current_user.id%>
+  </div>
+
+  <div>
+    <%= form.label :tag, style: "display: block" %>
+    <%= form.text_area :tag, value: @topic%>
+  </div>
+
+  <div>
+    <%= form.label :topic, style: "display: block" %>
+    <%= form.text_field :topic, value:  @topic%>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content, value: @content %>
+  </div>
+
+  <div>
+    <%= form.label :titolo, style: "display: block" %>
+    <%= form.text_field :titolo, value: @title %>
+  </div>
+
+  <div>
+    <%= form.label :fonte_esterna, style: "display: block" %>
+    <%= form.text_field :fonte_esterna%>
+  </div>
+
+  <div>
+    <%= form.label :lingua, style: "display: block" %>
+    <%= form.text_field :lingua, value: "EN" %>
+  </div>
+
+  <div>
+    <%= form.label :editoriale, style: "display: block" %>
+    <%= form.text_field :editoriale, value: @author%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

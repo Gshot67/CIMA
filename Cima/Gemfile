@@ -35,6 +35,8 @@ gem 'ransack'
 
 gem "sassc-rails"
 
+gem 'news-api'
+
 source "https://rubygems.org"
 
 group :development, :test do

@@ -9,13 +9,25 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @user = @post.user_id
-    @info = Info.find_by(user_id: @user)
-    @username = @info.username 
+    #if @user == -1
+     # @username = @post.editoriale
+    #else
+      @info = Info.find_by(user_id: @user)
+      @username = @info.username 
+    #end
+    
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @type_request = params[:tor].to_i
+    if @type_request == 1
+      @author = params[:author]
+      @title = params[:title]
+      @content = params[:content]
+      @topic = params[:topic]
+    end
   end
 
   # GET /posts/1/edit
@@ -28,7 +40,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
+        format.html { redirect_to feed_path}
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -180,6 +180,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
+    news-api (0.2.0)
     nio4r (2.5.9)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
@@ -347,6 +348,7 @@ DEPENDENCIES
   excon
   importmap-rails
   jbuilder
+  news-api
   omniauth-facebook
   omniauth-rails_csrf_protection
   puma (~> 5.0)
