@@ -24,6 +24,14 @@ class PostsController < ApplicationController
       @content = params[:content]
       @topic = params[:topic]
     end
+
+    if params[:user_id] && params[:editoriale]
+      @post.user_id = params[:user_id]
+      @originalpost = Post.find(params[:editoriale])
+      @post.editoriale = @originalpost
+      @post.titolo = @originalpost.titolo
+      @post.topic = @originalpost.topic
+    end
   end
 
   # GET /posts/1/edit

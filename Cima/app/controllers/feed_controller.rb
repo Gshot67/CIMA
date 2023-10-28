@@ -29,7 +29,7 @@ class FeedController < ApplicationController
 
     def othernews
       @topic_feed = params[:feedtopic]
-      ak = ""
+      ak = "8f0a1853a01d41619b14d5ebbf1db467"
       if @topic_feed == 1
         nuova_query = URI.encode_www_form("apiKey" => ak)
       elsif @topic == 2
