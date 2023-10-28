@@ -11,7 +11,7 @@
 
       <p id="Author">
         <strong>Autore :</strong>
-        <%= @username %>
+        <%= link_to @username, info_user_path(user_id: @user) %>
       </p>
 
       <p id="content">
@@ -33,10 +33,12 @@
       <%= link_to "Back to posts", posts_path %>
 
       <%= button_to "Destroy this post", @post, method: :delete %>
+      <%= link_to "Aggiungi commento", new_post_comment_path(@post) %>
     </div>
   </div>
 </span>
-
-
-<!-- -->
+<!--Blocco commmenti -->
+<div class="container" id="comments_card">
+  <%= render partial: 'shared/comments', locals: { comments: @comments } %>
+</div>
 

@@ -9,13 +9,9 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @user = @post.user_id
-    #if @user == -1
-     # @username = @post.editoriale
-    #else
-      @info = Info.find_by(user_id: @user)
-      @username = @info.username 
-    #end
-    
+    @info = Info.find_by(user_id: @user)
+    @username = @info.username 
+    @comments = Comment.where(post_id: @post)
   end
 
   # GET /posts/new
