@@ -40,7 +40,7 @@
       <%= button_to "Destroy this post", @post, method: :delete %>
       <%= link_to "Aggiungi commento", new_post_comment_path(@post) %>
       <%= link_to "repost", new_post_path(user_id: current_user.id, editoriale: @post.id) %>
-      <%= button_to 'Segnala', segnala_post_path(@post), method: :post %>
+      <%= link_to 'Segnala', new_segnalazione_path(post_id: @post.id), method: :get %>
 
     </div>
   </div>

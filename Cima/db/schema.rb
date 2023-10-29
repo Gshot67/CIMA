@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_29_011817) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_29_013756) do
   create_table "comments", force: :cascade do |t|
     t.integer "post_id", null: false
     t.text "content", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_011817) do
     t.integer "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "motivo"
     t.index ["post_id"], name: "index_segnalaziones_on_post_id"
   end
 

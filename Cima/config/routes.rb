@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post 'segnala'
     end
   end
+  resources :segnalaziones, only: [:new, :create]
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   as :user do
     get "users/signin", to: 'dev/sessions#new'
