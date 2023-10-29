@@ -46,14 +46,14 @@
           <% else %>
           <% if Info.exists?(user_id: current_user.id)%>
             <div class="col-md-4">
-              <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
-                <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" />
-                <button type="submit" class="search-button">
-                <span class="icon-span">
-                  <img src="https://cdn1.iconfinder.com/data/icons/trycons/32/search-512.png" alt="Icona">
-                </span>
-                </button>
-              </form>
+              <%= form_tag("/search", {method: "get", class:"d-flex input-group w-auto my-auto mb-3 mb-md-0"}) do %>
+                 <%= text_field_tag :query, params[:query], class: 'form-control rounded', placeholder: 'Search', autocomplete: 'off' %>
+                <%= button_tag(type: 'submit', class: 'search-button') do %>
+                  <span class="icon-span">
+                    <img src="https://cdn1.iconfinder.com/data/icons/trycons/32/search-512.png" alt="Icona">
+                  </span>
+                <% end %>
+              <% end %>  
             </div>
           <%else%>
             <div class="space-divider2"></div>
