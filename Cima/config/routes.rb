@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts do
     resources :comments, only: [:new, :create]
+    member do
+      post 'segnala'
+    end
   end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   as :user do

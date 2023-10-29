@@ -57,6 +57,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def segnala
+    @post = Post.find(params[:id])
+    Segnalazione.create(post_id: @post.id)
+    redirect_to @post
+  end
+  
+
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
