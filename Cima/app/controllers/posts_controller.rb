@@ -28,9 +28,13 @@ class PostsController < ApplicationController
     if params[:user_id] && params[:editoriale]
       @post.user_id = params[:user_id]
       @originalpost = Post.find(params[:editoriale])
-      @post.editoriale = @originalpost
+      @post.editoriale = params[:editoriale]
       @post.titolo = @originalpost.titolo
       @post.topic = @originalpost.topic
+
+      @ouser = @originalpost.user_id
+      @oinfo = Info.find_by(user_id: @ouser)
+      @ousername = @oinfo.username       
     end
   end
 

@@ -4,29 +4,34 @@
 <span class="border border-dark rounded">
   <div class="container" id="post_card">
     <div id="<%= dom_id @post %>">
-      
-      <p>
-        <h1 id="title" align-center><%= @post.titolo %></h1> 
-      </p>
 
-      <p id="Author">
-        <strong>Autore :</strong>
-        <%= link_to @username, info_user_path(user_id: @user) %>
-      </p>
+      <% if @post.editoriale.present? %>
+        <% if @post.content.present? %>
+          <div id="editoriale">
+              <h3 id="banner_repost"><%= @username %> ha pubblicato un editoriale:</h3>
+              <p>
+                <h1 id="title" align-center><%= @post.titolo %></h1> 
+              </p>
+              <p id="content">
+                <%= @post.content %>
+              </p>
+              <p>
+                <strong>Tag:</strong>
+                <%= @post.tag %>
+              </p>
+          </div>
+        <% else %>
+          <h3 id="banner_repost"><%= @username %> ha ripubblicato:</h3>
+        <% end %>
 
-      <p id="content">
-        <%= @post.content %>
-      </p>
-      
-      <p>
-        <strong>Tag:</strong>
-        <%= @post.tag %>
-      </p>
+        <% @opost = @post.editoriale %>
+        <% @post = Post.find(@opost)%>
+        <%# @username = @ousername %>
+        <%# <% @user = @ouser %>
+      <% end %>
 
-      <p>
-        <strong>Topic:</strong>
-        <%= @post.topic %>
-      </p>
+      <%= render partial: 'posts/postcard', locals: { post: @post, username: @username, user: @user} %>
+
     </div>
   <div>
       <%= link_to "Edit this post", edit_post_path(@post) %> |

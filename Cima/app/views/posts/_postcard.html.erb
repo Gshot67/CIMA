@@ -1,0 +1,23 @@
+
+      <p>
+        <h1 id="title" align-center><%= post.titolo %></h1> 
+      </p>
+
+      <p id="Author">
+        <strong>Autore :</strong>
+        <%= link_to username, info_user_path(user_id: @user) %>
+      </p>
+
+      <p id="content">
+        <%= post.content %>
+      </p>
+      
+      <p>
+        <strong>Tag:</strong>
+        <%= post.tag %>
+      </p>
+
+      <p>
+        <strong>Topic:</strong>
+        <%= post.topic %>
+      </p>
