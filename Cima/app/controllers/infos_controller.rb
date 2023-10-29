@@ -49,6 +49,12 @@ class InfosController < ApplicationController
     end
   end
 
+  def certificate
+    @info = Info.find(params[:id])
+    @info.update(certificazione: params[:certificazione])
+    
+  end
+
   # DELETE /infos/1 or /infos/1.json
   def destroy
     @info.destroy

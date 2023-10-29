@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   resources :follows
-  resources :infos
+  resources :infos do
+    member do
+      patch :certificate
+    end
+  end
   resources :comments
   resources :posts do
-    resources :comments, only: [:new, :create]
+    resources :comments, only: [:new, :create] 
     member do
       post 'segnala'
     end

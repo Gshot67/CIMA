@@ -47,10 +47,17 @@
                         <%end%>
 
                         <div class="col-md-6">
-                            <div class="media">
-                                <label>Certificato</label>
-                                <p><%= @info.certificazione %></p>
-                            </div>
+                            <%= @cinfo= Info.where(user_id: current_user.id).first %>
+                            <% if @cinfo.tipo == 2 && @cinfo.user_id != @info.user_id && @info.certificazione.blank? %>
+                                <div class="media">
+                                    <span class="custom-button">
+                                        <strong> Contenuto di @info: <%= @info %> </strong>
+                                        <%= button_to "Certifica", certificate_info_path(@info, certificazione: @cinfo.username  ), method: :patch %>
+                                    </span>
+                                </div>
+
+                            <% end %>
+
                         </div>
                     </div>
                 </div>
