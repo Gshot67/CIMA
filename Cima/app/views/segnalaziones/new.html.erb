@@ -1,6 +1,12 @@
-<%= form_with(model: @segnalazione, url: segnalaziones_path, method: :post) do |form| %>
-  <%= form.hidden_field :post_id %>
-  <%= form.label :motivo %>
-  <%= form.text_area :motivo %>
-  <%= form.submit 'Invia Segnalazione' %>
-<% end %>
+<%= stylesheet_link_tag("bodies") %>
+<div class="container">
+  <div id="cardbase">
+
+    <%= form_with(model: @segnalazione, url: segnalaziones_path, method: :post) do |form| %>
+      <%= form.hidden_field :post_id %>
+      <%= form.label :motivo %>
+      <%= form.text_area :motivo %>
+      <%= form.submit 'Invia Segnalazione' %>
+    <% end %>
+  </div>
+</div>

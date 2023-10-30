@@ -33,15 +33,16 @@
       <%= render partial: 'posts/postcard', locals: { post: @post, username: @username, user: @user} %>
 
     </div>
-  <div>
-      <%= link_to "Edit this post", edit_post_path(@post) %> |
-      <%= link_to "Back to posts", posts_path %>
-
+    <div id="linksection">
+      <% if current_user.id == @post.user_id %>
+      <%= link_to "Edit this post", edit_post_path(@post), id: "linksection" %> 
+      <%#= link_to "Back to posts", posts_path, id: "linksection" %>
       <%= button_to "Destroy this post", @post, method: :delete %>
-      <%= link_to "Aggiungi commento", new_post_comment_path(@post) %>
-      <%= link_to "repost", new_post_path(user_id: current_user.id, editoriale: @post.id) %>
-      <%= link_to 'Segnala', new_segnalazione_path(post_id: @post.id), method: :get %>
-      <%= link_to 'Traduci' %>
+      <% end %>
+      <%= link_to "Aggiungi commento", new_post_comment_path(@post), id: "linksection" %>|
+      <%= link_to "repost", new_post_path(user_id: current_user.id, editoriale: @post.id), id: "linksection" %>|
+      <%= link_to 'Segnala', new_segnalazione_path(post_id: @post.id), method: :get, id: "linksection" %>|
+      <%= link_to 'Traduci', id: "linksection" %>
 
     </div>
   </div>

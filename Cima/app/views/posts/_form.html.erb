@@ -12,8 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%#= form.label :user_id, style: "display: block" %>
+    <%= form.hidden_field :user_id %>
+  </div>
+  
+  <div>
+    <%= form.label :titolo, style: "display: block" %>
+    <%= form.text_field :titolo %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
   </div>
 
   <div>
@@ -26,19 +36,11 @@
     <%= form.text_field :topic %>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
-  </div>
+  
 
   <div>
-    <%= form.label :titolo, style: "display: block" %>
-    <%= form.text_field :titolo %>
-  </div>
-
-  <div>
-    <%= form.label :fonte_esterna, style: "display: block" %>
-    <%= form.text_field :fonte_esterna %>
+    <%#= form.label :fonte_esterna, style: "display: block" %>
+    <%= form.hidden_field :fonte_esterna %>
   </div>
 
   <div>
@@ -47,8 +49,8 @@
   </div>
 
   <div>
-    <%= form.label :editoriale, style: "display: block" %>
-    <%= form.text_field :editoriale %>
+    <%#= form.label :editoriale, style: "display: block" %>
+    <%= form.hidden_field :editoriale %>
   </div>
 
   <div>
