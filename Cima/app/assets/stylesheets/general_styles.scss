@@ -224,3 +224,9 @@ mark {
   max-width: 100%; /* Assicurati che l'immagine non superi la larghezza del contenitore */
   max-height: 100%; /* Assicurati che l'immagine non superi l'altezza del contenitore */
 }
+
+.image-container2 {
+  width: 60px; /* Imposta la larghezza del div */
+  height: 60px; /* Imposta l'altezza del div */
+  overflow: hidden; /* Nasconde parte dell'immagine che eccede le dimensioni del div */
+}

@@ -56,8 +56,13 @@
                                 </div>
 
                             <% end %>
-
                         </div>
+                        <% if Info.where(user_id: current_user.id).first.username == @info.username%>
+
+                        <!-- aggiungi bottoneeeeeeeeeeeeeeeeeeeeeeeeeeeeeee> -->
+
+                        
+                        <% end %>
                     </div>
                 </div>
             </div>

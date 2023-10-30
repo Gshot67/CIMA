@@ -20,6 +20,7 @@ class InfosController < ApplicationController
 
   # GET /infos/1/edit
   def edit
+    
   end
 
   # POST /infos or /infos.json
