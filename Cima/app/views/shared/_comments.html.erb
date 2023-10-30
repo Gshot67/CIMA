@@ -4,9 +4,13 @@
 <div class="row">
         <ul class="list-group">
             <% @comments.each do |comment|%>
-                <div class="list-group-item list-group-item-action flex-column align-items-start">
-                    <p class="mb-1"><%= comment.content %></p>            
+                <div class= "list-group-item list-group-item-action flex-column align-items-start" >
+                    <p class="mb-1"><%= comment.content %></p> 
+                    <% if comment.user_id == current_user.id%>
+                        <%= button_to "Destroy this comment", comment , class:"inline", method: :delete %>
+                    <% end %>           
                 </div>
-            <%end%>
+                
+            <% end %>
         </ul>
 </div>
