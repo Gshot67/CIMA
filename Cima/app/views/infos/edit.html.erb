@@ -1,10 +1,16 @@
-<h1>Editing info</h1>
+<%= stylesheet_link_tag("bodies") %>
 
-<%= render "form", info: @info %>
+<div class="container">
+  <div id="cardbase">
 
-<br>
+    <h1>Editing info</h1>
 
-<div>
-  <%= link_to "Show this info", @info %> |
-  <%= link_to "Back to infos", infos_path %>
+    <%= render "form", info: @info %>
+
+    <br>
+
+    <div>
+      <%= link_to "Show this info", @info %> 
+    </div>
+  </div>
 </div>

@@ -58,9 +58,7 @@
                             <% end %>
                         </div>
                         <% if Info.where(user_id: current_user.id).first.username == @info.username%>
-
-                        <!-- aggiungi bottoneeeeeeeeeeeeeeeeeeeeeeeeeeeeeee> -->
-
+                            <%= link_to "Edit this info", edit_info_path(@info) %> 
                         
                         <% end %>
                     </div>

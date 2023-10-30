@@ -20,7 +20,7 @@ class InfosController < ApplicationController
 
   # GET /infos/1/edit
   def edit
-    
+    @info = Info.find(params[:id])
   end
 
   # POST /infos or /infos.json
@@ -39,9 +39,10 @@ class InfosController < ApplicationController
 
   # PATCH/PUT /infos/1 or /infos/1.json
   def update
+    @info = Info.find(params[:id])
     respond_to do |format|
       if @info.update(info_params)
-        format.html { redirect_to info_url(@info), notice: "Info was successfully updated." }
+        format.html { redirect_to info_url(user_id: @info.user_id), notice: "Info was successfully updated." }
         format.json { render :show, status: :ok, location: @info }
       else
         format.html { render :edit, status: :unprocessable_entity }
