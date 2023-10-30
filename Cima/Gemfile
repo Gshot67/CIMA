@@ -49,6 +49,9 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :development, :test do
+  gem 'factory_bot_rails'
+end
 gem 'excon'
 
 gem 'dotenv-rails', groups: [:development, :test]

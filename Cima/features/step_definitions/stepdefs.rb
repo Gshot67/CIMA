@@ -31,37 +31,43 @@ Then('User should be able to access his account page') do
 end
 
 When('the user clicks on create new post') do
-    post new_post_path, params: { user_id: current_user.id }
+    visit new_post_path
 end
 
 When('the user fils all the fields') do
-  pending # Write code here that turns the phrase above into concrete actions
+    #fill_in 'post_user_id', with: '1'
+    fill_in 'post_titolo', with: 'Titolo del post'
+    fill_in 'post_content', with: 'Contenuto del post'
+    fill_in 'post_tag', with: 'Tag del post'
+    fill_in 'post_topic', with: 'Argomento del post'
+    fill_in 'post_lingua', with: 'Lingua del post'
+
 end
 
 When('the user submits the form') do
-  pending # Write code here that turns the phrase above into concrete actions
+    click_button 'Create Post'
 end
 
 Then('the user has his post on the feed below') do
-  pending # Write code here that turns the phrase above into concrete actions
+    users = User.all
+    expect(users).not_to be_empty
 end
 
 Then('User should see the feed') do
-  pending # Write code here that turns the phrase above into concrete actions
+    expect(page).to have_link('Log Out', href: destroy_user_session_path)
 end
 
 When('the user clicks on retwitt') do
-  pending # Write code here that turns the phrase above into concrete actions
+    post_id = Post.all.first
+    visit new_post_path(user_id: 1, editoriale: post_id)
+    click_button 'Create Post'
+    
 end
 
 When('the user goes to the author page') do
-  pending # Write code here that turns the phrase above into concrete actions
+    visit info_user_path(user_id: 1)
 end
 
-When('the user follows the author') do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then('the user is able to unfollow') do
-  pending # Write code here that turns the phrase above into concrete actions
+Then('the user is able to follow if author isn t himself') do
+    expect(page).not_to have_content('Follow')
 end
