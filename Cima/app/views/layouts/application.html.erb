@@ -14,12 +14,21 @@
     <div class="p-3 text-center border-bottom">
       <div class="container">
         <div class="row">
-          <!-- Left elements -->
+          <!-- Left elements --> 
+          <% if !user_signed_in? || !Info.exists?(user_id: current_user.id)%>
           <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
             <a href="#!" class="ms-md-2">
+           
               <%= image_tag("logo_cima.png", height:"35") %>
             </a>
           </div>
+          <%else%>
+          <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+            <div class="image-container2 ">    
+              <%= link_to(image_tag("logo_cima.png"), feed_path, class: "custom-link-class" )%>
+            </div>
+          </div>
+          <%end%>
           <!-- Left elements -->
 
           <!-- Center elements -->
