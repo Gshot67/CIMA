@@ -42,9 +42,11 @@ source "https://rubygems.org"
 group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
 end
+
 group :test do
-  gem 'cucumber', '~> 9.0.2'
-  gem 'rspec', '~> 3.12.0'
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not mandatory, but highly recommended
+  gem 'database_cleaner'
 end
 
 gem 'excon'

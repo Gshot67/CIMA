@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class=row id="new_post_banner">
-        <%= link_to content_tag(:h4, 'Crea nuovo post'), new_post_path(user_id: current_user.id), method: :post, style: 'color: black; text-decoration:none;' %>
+        <%= link_to "Crea nuovo post", new_post_path(user_id: current_user.id), method: :post, id: 'il_mio_link', style: 'color: black; text-decoration:none;' %>
     </div>
 
 

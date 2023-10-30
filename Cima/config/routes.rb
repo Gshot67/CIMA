@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   end
 
   root 'pages#home'
-
   get '/search', to: 'search#index'
   get 'add_infos' => 'infos#new'
   get 'info_user' => 'infos#show'
