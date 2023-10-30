@@ -1,3 +1,11 @@
+*{
+  font-family: 'Playfair Display', serif;
+}
+
+.p-3.text-center.border-bottom {
+  background-color: tan;
+}
+
 .icon-span {
   display: inline-block; /* Per rendere lo span un elemento inline-block */
   width: 20px; /* Larghezza desiderata per lo span */
