@@ -2,10 +2,12 @@
 
 
 <div class="container">
-    <div class=row id="new_post_banner">
-        <%= link_to "Crea nuovo post", new_post_path(user_id: current_user.id), method: :post, id: 'il_mio_link', style: 'color: black; text-decoration:none;' %>
-    </div>
 
+    <% if @tipo != 0 %>
+        <div class=row id="new_post_banner">
+            <%= link_to content_tag(:h4, 'Crea nuovo post'), new_post_path(user_id: current_user.id), method: :post, style: 'color: black; text-decoration:none;' %>
+        </div>
+    <%end%>
 
     <div class="row">
         <!--
@@ -27,10 +29,13 @@
 
     </div>
     <div class='row '>
-        <span class="nav-link"> <%=link_to "Nuove Notizie", feed_othernews_path(feedtopic: @feedtopic), class: "nav-link" %> </span>
-        <% @languages.each do |language| %>
-            <%= link_to language, url_for(lingua: language), class: 'dropdown-item' %>
-        <% end %>
+        <span class="nav-link">
+            <%=link_to "Nuove Notizie", feed_othernews_path(feedtopic: @feedtopic), class: "inline" %> 
+            <% @languages.each do |language| %>
+                <%= link_to language, url_for(lingua: language), class: 'inline' %>
+            <% end %>
+        </span>
+        
     </div>
     <%= render partial: 'shared/feed', locals: { posts: @posts} %>
 </div>
