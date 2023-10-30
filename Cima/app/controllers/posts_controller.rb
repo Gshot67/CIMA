@@ -16,7 +16,12 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    if params[:user_id]
+      @post = Post.new(user_id: params[:user_id])
+    else
+      @post = Post.new
+    end
+    
     @type_request = params[:tor].to_i
     if @type_request == 1
       @author = params[:author]
