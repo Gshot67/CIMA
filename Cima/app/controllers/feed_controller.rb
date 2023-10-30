@@ -21,6 +21,7 @@ class FeedController < ApplicationController
       @languages = ['IT', 'EN', 'FR', 'SP']
       @language = params[:lingua] || 'Italiano'
       @posts = Post.where(topic: 'sport')
+      @posts = @posts.where(lingua: @language)
       @cinfo = Info.where(user_id: current_user.id).first
       @tipo= @cinfo.tipo
       @feedtopic = 2
@@ -30,6 +31,7 @@ class FeedController < ApplicationController
       @languages = ['IT', 'EN', 'FR', 'SP']
       @language = params[:lingua] || 'Italiano'
       @posts = Post.where(topic: 'pop')
+      @posts = @posts.where(lingua: @language)
       @cinfo = Info.where(user_id: current_user.id).first
       @tipo= @cinfo.tipo
       @feedtopic = 3
